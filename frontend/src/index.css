@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --road: #0f1117;
+  --panel: #1a1d27;
+  --card: #20242f;
+  --border: #2a2f3f;
+  --fleet-blue: #4455ff;
+  --amber: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--road);
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  background: #1a1d27 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #20242f !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #2a2f3f !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+}
+
+.leaflet-popup-tip {
+  background: #20242f !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--road);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f3f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4455ff;
+}
+
+/* ELD Log SVG print styles */
+@media print {
+  .no-print { display: none !important; }
+  .eld-log-sheet { page-break-after: always; }
+}
+
+/* Animated gradient */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Status color tokens */
+.status-driving { color: #4ade80; }
+.status-off-duty { color: #60a5fa; }
+.status-on-duty { color: #fbbf24; }
+.status-sleeper { color: #a78bfa; }
+
+.bg-status-driving { background-color: #4ade80; }
+.bg-status-off-duty { background-color: #60a5fa; }
+.bg-status-on-duty { background-color: #fbbf24; }
+.bg-status-sleeper { background-color: #a78bfa; }
