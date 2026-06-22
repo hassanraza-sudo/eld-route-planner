@@ -7,7 +7,7 @@ import requests
 from django.conf import settings
 
 ORS_GEOCODE_URL = "https://api.openrouteservice.org/geocode/search"
-ORS_DIRECTIONS_URL = "https://api.openrouteservice.org/v2/directions/driving-hgv"
+ORS_DIRECTIONS_URL = "https://api.openrouteservice.org/v2/directions/driving-car"
 
 # Approximate mph for truck driving
 TRUCK_SPEED_MPH = 55.0
